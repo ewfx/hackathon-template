@@ -17,20 +17,24 @@ interface dataModel {
   styleUrls: ['./file-reader.component.css'],
 })
 export class FileReaderComponent implements OnInit {
-  fileContent: any[] = [];
+  fileContent="";
   errorMessage = '';
   fileList: any = '';
   private http = inject(HttpClient);
 
   ngOnInit() {
     this.http
-      .get<{ files: string[] }>('http://localhost:3000/files')
-      .subscribe((data) => {
-        this.readTextFile(data.files);
+      .get('http://localhost:3000/read-files',{ responseType: 'json' })
+      .subscribe((data:any) => {        
+       this.fileContent=JSON.parse(JSON.stringify(data.files));
+      },
+      (error) => {
+        console.error('Error loading text file:', error);
+        this.errorMessage = 'Error loading file!';
       });
   }
 
-  readTextFile(fileList: string[]) {
+  /* readTextFile(fileList: string[]) {
     fileList.forEach((file: string) => {
       if (file.indexOf('.') >= 0) {// ignoring folders
         this.http
@@ -45,6 +49,7 @@ export class FileReaderComponent implements OnInit {
             }
           );
       }
-    });
-  }
+    }); 
+    }*/
+  
 }

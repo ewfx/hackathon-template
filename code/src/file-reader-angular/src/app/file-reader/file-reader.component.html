@@ -2,13 +2,9 @@
 
 {{errorMessage}}
 
-<div class="faq-container">
-   <div *ngFor="let faq of fileContent" class="faq-item">
-    <h3>{{ faq["Request"] }}</h3>
-    <p>{{ faq["Sub Request"] }}</p>
-    <p>{{ faq["Confidence Score"] }}</p>
-    <p>{{ faq["isDuplicate"] }}</p>
-  </div>
-
-
+<div class="faq-container">  
+   <div *ngFor="let faq of fileContent; index as i" class="faq-item">      
+    <h3>query {{i+1}}</h3>
+    <p>{{faq}}</p>   
+  </div> 
 </div>

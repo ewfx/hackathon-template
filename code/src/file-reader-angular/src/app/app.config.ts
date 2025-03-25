@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: FileReaderComponent }, // Default route
   { path: 'reader', component: FileReaderComponent },
   { path: 'upload', component: FileUploadComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' } // Wildcard route for unknown paths
+  //{ path: 'read-files' } // Wildcard route for unknown paths
 ];
 
 export const appConfig: ApplicationConfig = {

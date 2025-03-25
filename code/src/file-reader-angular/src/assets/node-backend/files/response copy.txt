@@ -1,7 +1,0 @@
-
-{
-  "Request": "Fee Payment 2",
-  "Sub Request": "Loan Payment",
-  "Confidence Score":"2",
-  "isDuplicate": 0
-}

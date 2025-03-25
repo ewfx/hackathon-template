@@ -1,9 +1,12 @@
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3000; // Change if needed
+const folder_Path="../../../../../../output-files";
+app.use(cors({ origin: "http://localhost:4200", credentials: true }));
 
 // Function to read files in a folder
 async function readFilesInFolder(folderPath) {
@@ -22,7 +25,7 @@ async function readFilesInFolder(folderPath) {
 
 // API Endpoint to get file contents
 app.get("/read-files", async (req, res) => {
-    const folderPath = path.resolve(__dirname, "./files"); // Adjust this path
+    const folderPath = path.resolve(__dirname, folder_Path); // Adjust this path
     const contents = await readFilesInFolder(folderPath);
     res.json({ files: contents });
 });
