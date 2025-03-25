@@ -1,0 +1,10 @@
+<h2>Text File Content:</h2>
+
+{{errorMessage}}
+
+<div class="faq-container">  
+   <div *ngFor="let faq of fileContent; index as i" class="faq-item">      
+    <h3>query {{i+1}}</h3>
+    <p>{{faq}}</p>   
+  </div> 
+</div>

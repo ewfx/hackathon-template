@@ -1,0 +1,10 @@
+<div>
+  <h2>Upload and Read a Text File</h2>
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <div *ngIf="fileContent">
+    <h3>File Content:</h3>
+    <pre>{{ fileContent }}</pre>
+  </div>
+</div>
+
