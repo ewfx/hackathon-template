@@ -1,8 +1,7 @@
-# 🚀 Project Name: AI Reconciliation Tool 🌟
+# 🚀 Project Name: AI Orchestration for Email & Document Triage Routing🌟
 
 ## Description
-An AI-powered anomaly detection and reconciliation tool built to enable seamless financial data matching and review by reconcilers.  
-This project automates anomaly detection in datasets, allows user interaction for feedback, and integrates with Jira for tracking and resolution.
+This project implements an AI-powered solution for automating the classification, data extraction, and routing of emails in a commercial bank's lending service team. The system processes incoming emails and attachments, extracts key information, classifies the emails into predefined request types, and routes them to appropriate teams.
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -18,10 +17,9 @@ This project automates anomaly detection in datasets, allows user interaction fo
 ---
 
 ## 🎯 Introduction
-The **AI Reconciliation Tool** addresses the challenges faced in modern-day financial reconciliations by:
-1. Automating anomaly detection in large datasets.
-2. Allowing reconcilers to provide feedback via an interactive UI.
-3. Logging anomalies and their resolutions in platforms like Jira for collaborative tracking.
+The **AI Orchestration for Email & Document Triage Routing ** 
+
+
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
