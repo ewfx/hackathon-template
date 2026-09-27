@@ -1,0 +1,5 @@
+# Fill this in at kickoff once problem statements are announced.
+# `prefix` must match one of the announced problem-statement prefixes exactly.
+team: your-github-username
+prefix: REPLACE_ME       # e.g. aidel, aidhp, catfe, gaipl, gaied
+problem_statement: "REPLACE_ME with the full problem statement title"

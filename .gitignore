@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Env / secrets — NEVER commit real values
+.env
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
