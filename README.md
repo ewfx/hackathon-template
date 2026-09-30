@@ -64,4 +64,15 @@ data, and anything else a reviewer should know.
 - [ ] `Dockerfile` builds and the app responds on its exposed port
 - [ ] Tests exist under `code/test` and pass
 - [ ] `.env.example` lists every required environment variable (no real secrets)
-- [ ] No committed secrets, API keys, or real personal data anywhere in the repo
+- [ ] No committed secrets, API keys, or real personal data anywhere in the repo (including git history)
+
+### Engineering expectations (how "production-ready" is judged, in general terms)
+Your submission is evaluated automatically and mostly on how it's engineered, not just on whether it works. Things we look for — ideally *working* in the running app, not just present in the code:
+- [ ] Bad or unexpected input gets a clear 4xx error, never a crash or 500
+- [ ] The app starts even if external services (LLM API, database) are unreachable, and shuts down cleanly on SIGTERM
+- [ ] Logs are structured (e.g. JSON), with no raw personal data in them; log level set via env
+- [ ] `/health` (and ideally `/ready`) endpoints; metrics if you can
+- [ ] Outbound calls have timeouts (and retries where sensible)
+- [ ] Tests cover failure paths, not just the happy path, and run without internet (mock external services)
+- [ ] If you call an LLM: model/key from env, token limits set, prompts kept in files, output validated against a schema
+- [ ] A short design note in `artifacts/arch/` explaining your key decisions and trade-offs
