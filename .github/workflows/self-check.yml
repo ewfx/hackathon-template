@@ -1,0 +1,26 @@
+# Submission self-check: builds, tests (offline) and starts your app the way the organisers'
+# evaluation does, so you see problems during the hackathon, not after the freeze.
+# Run it: Actions tab -> "Submission self-check" -> "Run workflow". Results: that run -> Summary.
+# Advisory only: it doesn't affect your score. Manual-only (not on every push) to keep within the
+# organisation's GitHub Actions minutes: run it after a meaningful change, and once before the freeze.
+name: Submission self-check
+
+on:
+  workflow_dispatch:
+
+concurrency:   # a newer run cancels the older one
+  group: self-check-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  self-check:
+    if: ${{ !github.event.repository.is_template }}   # not on the empty template repo itself
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-check
+        run: bash .github/scripts/self-check.sh
